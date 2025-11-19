@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { ALBUMS } from '../constants';
-import { SectionId, Album } from '../types';
-import { Play, Disc3, Headphones, ChevronDown, ChevronUp } from 'lucide-react';
+import { ALBUMS, SOCIAL_LINKS } from '../constants';
+import { SectionId } from '../types';
+import { Headphones, ChevronDown, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
+import { fadeInUpVariants, fadeInRightVariants, scaleInVariants, easeOut } from '../animations';
 
 export const Discography: React.FC = () => {
   const [expandedAlbum, setExpandedAlbum] = useState<number | null>(null);
@@ -30,9 +32,33 @@ export const Discography: React.FC = () => {
             whileInView={{ opacity: 1 }}
             className="hidden md:flex items-center gap-8 text-xs text-gray-600 uppercase tracking-widest"
           >
-            <a href="#" className="hover:text-white transition-colors">Spotify</a>
-            <a href="#" className="hover:text-white transition-colors">Apple Music</a>
-            <a href="#" className="hover:text-white transition-colors">Bandcamp</a>
+            <a
+              href={SOCIAL_LINKS.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors flex items-center gap-2"
+            >
+              <ExternalLink size={14} />
+              Spotify
+            </a>
+            <a
+              href={SOCIAL_LINKS.appleMusic}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors flex items-center gap-2"
+            >
+              <ExternalLink size={14} />
+              Apple Music
+            </a>
+            <a
+              href={SOCIAL_LINKS.bandcamp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors flex items-center gap-2"
+            >
+              <ExternalLink size={14} />
+              Bandcamp
+            </a>
           </motion.div>
         </div>
 
@@ -46,10 +72,10 @@ export const Discography: React.FC = () => {
             onClick={() => toggleAlbum(2)}
           >
              <div className="relative aspect-square overflow-hidden bg-stone-900 mb-8 shadow-2xl">
-                <img 
-                   src={ALBUMS[2].cover} 
-                   alt={ALBUMS[2].title} 
-                   className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                <OptimizedImage
+                   src={ALBUMS[2].cover}
+                   alt={ALBUMS[2].title}
+                   className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
                 
@@ -107,7 +133,11 @@ export const Discography: React.FC = () => {
                     onClick={() => toggleAlbum(idx)}
                   >
                     <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-gray-800 overflow-hidden relative shadow-lg">
-                       <img src={album.cover} alt={album.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                       <OptimizedImage
+                        src={album.cover}
+                        alt={album.title}
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                       />
                     </div>
                     
                     <div className="flex flex-col justify-center py-2 w-full">

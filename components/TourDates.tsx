@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TOUR_DATES } from '../constants';
 import { SectionId } from '../types';
-import { Ticket } from 'lucide-react';
+import { Ticket, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Modal } from './Modal';
+import { fadeInUpVariants, easeOut } from '../animations';
 
 export const TourDates: React.FC = () => {
-  const handleBooking = (city: string) => {
-    // Simulated functionality
-    alert(`Redirection vers la billetterie pour le concert à ${city}. (Simulation)`);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [ticketLink, setTicketLink] = useState<string>('');
+
+  const handleBooking = (city: string, link?: string) => {
+    setSelectedCity(city);
+    setTicketLink(link || '');
+  };
+
+  const closeModal = () => {
+    setSelectedCity(null);
+    setTicketLink('');
   };
 
   return (
     <section id={SectionId.LIVE} className="py-32 px-6 bg-yuki text-sumi min-h-[80vh] flex flex-col justify-center">
       <div className="max-w-5xl mx-auto w-full">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          variants={fadeInUpVariants}
+          transition={easeOut}
           className="flex flex-col md:flex-row justify-between items-end mb-24"
         >
           <div>
@@ -33,10 +45,11 @@ export const TourDates: React.FC = () => {
           {TOUR_DATES.map((gig, idx) => (
             <motion.div 
               key={idx} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              variants={fadeInUpVariants}
+              transition={{ ...easeOut, delay: idx * 0.1 }}
               className="group flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-gray-300 hover:border-sumi transition-colors px-2 relative overflow-hidden"
             >
               {/* Hover Background */}
@@ -62,8 +75,9 @@ export const TourDates: React.FC = () => {
                    </span>
                  ) : (
                    <button 
-                    onClick={() => handleBooking(gig.city)}
+                    onClick={() => handleBooking(gig.city, gig.ticketLink)}
                     className="group/btn flex items-center gap-3 text-xs font-bold uppercase tracking-widest bg-sumi text-white px-6 py-3 rounded-full hover:bg-vermilion transition-colors duration-300"
+                    aria-label={`Réserver des billets pour ${gig.city}`}
                    >
                      <span>Billets</span>
                      <Ticket size={14} className="group-hover/btn:rotate-12 transition-transform" />
@@ -75,8 +89,11 @@ export const TourDates: React.FC = () => {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUpVariants}
+          transition={easeOut}
           className="mt-32 text-center"
         >
           <p className="text-xs text-gray-400 uppercase tracking-widest max-w-md mx-auto leading-relaxed mb-8">
@@ -87,6 +104,41 @@ export const TourDates: React.FC = () => {
           </p>
         </motion.div>
       </div>
+
+      {/* Ticket Modal */}
+      <Modal isOpen={!!selectedCity} onClose={closeModal} title="Billetterie">
+        <div className="space-y-6">
+          <p className="text-lg font-serif">
+            Vous souhaitez réserver des billets pour le concert à <strong className="text-white">{selectedCity}</strong>.
+          </p>
+          
+          {ticketLink ? (
+            <div className="space-y-4">
+              <p className="text-gray-400">Vous allez être redirigé vers la plateforme de billetterie officielle.</p>
+              <a
+                href={ticketLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-white text-sumi px-8 py-4 rounded font-bold uppercase tracking-widest text-sm hover:bg-gray-200 transition-colors"
+              >
+                Accéder à la billetterie
+                <ExternalLink size={18} />
+              </a>
+            </div>
+          ) : (
+            <p className="text-gray-400">
+              Les billets ne sont pas encore en vente. Revenez bientôt ou contactez-nous pour plus d'informations.
+            </p>
+          )}
+          
+          <button
+            onClick={closeModal}
+            className="w-full mt-6 border border-gray-700 text-gray-300 px-6 py-3 rounded hover:bg-white/5 transition-colors"
+          >
+            Fermer
+          </button>
+        </div>
+      </Modal>
     </section>
   );
 };

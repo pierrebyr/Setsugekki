@@ -144,3 +144,12 @@ export const NEWS_ITEMS: NewsItem[] = [
     image: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1000&auto=format&fit=crop"
   }
 ];
+// Social Links
+export const SOCIAL_LINKS = {
+  instagram: "https://instagram.com/setsugekkatrio",
+  spotify: "https://open.spotify.com/artist/setsugekkatrio",
+  appleMusic: "https://music.apple.com/artist/setsugekkatrio",
+  bandcamp: "https://setsugekkatrio.bandcamp.com",
+  youtube: "https://youtube.com/@setsugekkatrio",
+  email: "mailto:contact@setsugekka.jp"
+};

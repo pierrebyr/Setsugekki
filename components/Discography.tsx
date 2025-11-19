@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ALBUMS, SOCIAL_LINKS } from '../constants';
 import { SectionId } from '../types';
 import { Headphones, ChevronDown, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OptimizedImage } from './OptimizedImage';
-import { fadeInUpVariants, fadeInRightVariants, scaleInVariants, easeOut } from '../animations';
 
 export const Discography: React.FC = () => {
   const [expandedAlbum, setExpandedAlbum] = useState<number | null>(null);

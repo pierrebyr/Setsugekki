@@ -78,7 +78,8 @@ export const Contact: React.FC = () => {
       // Simulation d'un délai réseau
       await new Promise(resolve => setTimeout(resolve, 1500));
 
-      console.log('Formulaire soumis:', formData);
+      // TODO: Replace with actual API call
+      // console.log('Formulaire soumis:', formData);
 
       setIsSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -86,7 +87,8 @@ export const Contact: React.FC = () => {
       // Réinitialiser le succès après 5 secondes
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (error) {
-      console.error('Erreur lors de la soumission:', error);
+      // TODO: Replace with proper error logging service (e.g., Sentry)
+      // console.error('Erreur lors de la soumission:', error);
       setErrors({ message: 'Une erreur est survenue. Veuillez réessayer.' });
     } finally {
       setIsSubmitting(false);

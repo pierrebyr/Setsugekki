@@ -66,6 +66,6 @@ export const staggerContainerVariants: Variants = {
 };
 
 // Common transition configurations
-export const easeOut = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
-export const easeInOut = { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] };
-export const spring = { type: 'spring', damping: 20, stiffness: 100 };
+export const easeOut = { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const };
+export const easeInOut = { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] as const };
+export const spring = { type: 'spring' as const, damping: 20, stiffness: 100 };

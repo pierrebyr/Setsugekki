@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { CustomCursor } from './components/CustomCursor';

@@ -1,26 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { SectionId } from '../types';
 import { cn } from '../utils';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface MenuItem {
   label: string;
-  id: SectionId;
+  href: string;
+  isSection?: boolean;
 }
 
 const MENU_ITEMS: MenuItem[] = [
-  { label: 'Histoire', id: SectionId.ABOUT },
-  { label: 'Philosophie', id: SectionId.PHILOSOPHY },
-  { label: 'Musique', id: SectionId.MUSIC },
-  { label: 'Presse', id: SectionId.PRESS },
-  { label: 'Concerts', id: SectionId.LIVE },
-  { label: 'Contact', id: SectionId.CONTACT }
+  { label: 'Histoire', href: `/#${SectionId.ABOUT}`, isSection: true },
+  { label: 'Musique', href: `/#${SectionId.MUSIC}`, isSection: true },
+  { label: 'Concerts', href: '/tour' },
+  { label: 'Galerie', href: '/gallery' },
+  { label: 'Presse', href: '/press-kit' },
+  { label: 'Contact', href: `/#${SectionId.CONTACT}`, isSection: true }
 ];
 
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +35,41 @@ export const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const handleNavClick = (href: string, isSection?: boolean) => {
     setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    if (isSection) {
+      const sectionId = href.replace('/#', '');
+
+      if (location.pathname !== '/') {
+        // Navigate to home then scroll
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(href);
+    }
+  };
+
+  const handleLogoClick = () => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      const element = document.getElementById(SectionId.HERO);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -44,31 +79,30 @@ export const Navigation: React.FC = () => {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out px-6 md:px-12 py-6 flex justify-between items-center",
         scrolled || isOpen ? "bg-sumi/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent"
       )} role="navigation" aria-label="Navigation principale">
-        <a 
-          href="#hero"
-          onClick={(e) => { e.preventDefault(); scrollTo(SectionId.HERO); }}
-          className="relative z-50 group" 
+        <button
+          onClick={handleLogoClick}
+          className="relative z-50 group"
           aria-label="Retour à l'accueil"
         >
           <h1 className="text-2xl font-serif font-bold tracking-[0.2em] text-yuki group-hover:opacity-70 transition-opacity">
             雪月花
           </h1>
-        </a>
+        </button>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10 lg:space-x-12 text-xs font-sans tracking-[0.2em] uppercase text-gray-300">
+        <div className="hidden md:flex items-center space-x-10 lg:space-x-12 text-xs font-sans tracking-[0.2em] uppercase text-gray-300">
           {MENU_ITEMS.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => { e.preventDefault(); scrollTo(item.id); }}
+            <button
+              key={item.href}
+              onClick={() => handleNavClick(item.href, item.isSection)}
               className="hover:text-white relative group overflow-hidden py-1"
-              aria-label={`Aller à la section ${item.label}`}
+              aria-label={`Aller à ${item.label}`}
             >
               <span className="relative z-10">{item.label}</span>
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
-            </a>
+            </button>
           ))}
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Toggle */}
@@ -95,17 +129,16 @@ export const Navigation: React.FC = () => {
             className="fixed inset-0 bg-sumi z-40 flex flex-col items-center justify-center space-y-12"
           >
             {MENU_ITEMS.map((item, idx) => (
-              <motion.a
-                key={item.id}
-                href={`#${item.id}`}
+              <motion.button
+                key={item.href}
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 + idx * 0.1, duration: 0.5 }}
-                onClick={(e) => { e.preventDefault(); scrollTo(item.id); }}
+                onClick={() => handleNavClick(item.href, item.isSection)}
                 className="text-3xl font-serif tracking-[0.2em] text-yuki hover:text-gray-400 transition-colors"
               >
                 {item.label}
-              </motion.a>
+              </motion.button>
             ))}
           </motion.div>
         )}

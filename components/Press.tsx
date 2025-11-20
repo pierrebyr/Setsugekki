@@ -1,14 +1,14 @@
-import React from 'react';
 import { SectionId } from '../types';
 import { PRESS_QUOTES, NEWS_ITEMS } from '../constants';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const Press: React.FC = () => {
   return (
     <section id={SectionId.PRESS} className="py-32 px-6 bg-paper text-sumi relative overflow-hidden">
-      {/* Grain Texture already global, but adding local paper texture */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] pointer-events-none mix-blend-multiply"></div>
+      {/* Subtle paper texture pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100\' height=\'100\' filter=\'url(%23noise)\' opacity=\'0.5\'/%3E%3C/svg%3E")' }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -62,10 +62,10 @@ export const Press: React.FC = () => {
                 className="group cursor-pointer"
               >
                 <div className="aspect-[16/9] overflow-hidden mb-6 relative bg-gray-200">
-                  <img 
-                    src={news.image} 
-                    alt={news.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0" 
+                  <OptimizedImage
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-sumi">
                     {news.category}

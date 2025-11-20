@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "history": "History",
+    "music": "Music",
+    "concerts": "Concerts",
+    "gallery": "Gallery",
+    "press": "Press",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Tokyo Contemporary Trio",
+    "title": "Setsugekka",
+    "quote": "\"Snow, Moon, Flowers.\"",
+    "description": "The ephemeral beauty of things.",
+    "discover": "Discover"
+  },
+  "about": {
+    "sectionTitle": "Formation & History",
+    "title": "Winter",
+    "year": "2018",
+    "intro": "The trio formed almost by accident during a December night at Blue Note Tokyo. Misaki was playing a solo set, Kenta joined her, and Reina borrowed the drums. They played until 4am under the year's first snowfall.",
+    "quote": "\"Like the falling snow, the changing moon, and the flowers that bloom then fade, our jazz is alive, impermanent.\"",
+    "musicians": "The Musicians"
+  },
+  "philosophy": {
+    "title": "三つの道",
+    "subtitle": "Mittsu no Michi",
+    "section": "Philosophy",
+    "integrity": {
+      "title": "Seijitsu",
+      "meaning": "Integrity",
+      "desc": "Always play with emotional honesty, never to impress."
+    },
+    "space": {
+      "title": "Kūkan",
+      "meaning": "Space",
+      "desc": "Silence is as important as sound. The concept of Ma (間)."
+    },
+    "impermanence": {
+      "title": "Mujō",
+      "meaning": "Impermanence",
+      "desc": "Accept that each performance is unique, ephemeral and alive."
+    },
+    "quote": "\"Silence is not the absence of sound, but an anticipation.\"",
+    "noPlayback": "No playback",
+    "noOverdubs": "No overdubs"
+  },
+  "discography": {
+    "title": "Discography",
+    "subtitle": "Listen & Releases",
+    "release": "Release",
+    "tracks": "Tracks",
+    "tracklist": "Tracklist",
+    "details": "Details"
+  },
+  "press": {
+    "sectionTitle": "News & Reviews",
+    "title": "Recognition",
+    "news": "News 2025",
+    "readMore": "Read article"
+  },
+  "tour": {
+    "title": "Tour",
+    "upcoming": "Upcoming Concerts",
+    "book": "Book",
+    "soldOut": "Sold Out",
+    "fewTickets": "Few Tickets",
+    "available": "Available",
+    "calendar": "Complete concert calendar"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "For booking, press, or collaboration inquiries.",
+    "management": "Management",
+    "booking": "Booking Europe (2026)",
+    "tba": "TBA / In negotiations",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "selectSubject": "Select a subject",
+      "booking": "Concert Booking",
+      "pressInterview": "Press / Interview",
+      "other": "Other",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email",
+      "subjectRequired": "Please select a subject",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "submitError": "An error occurred. Please try again."
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Get the latest trio news and concert dates.",
+    "placeholder": "your@email.com",
+    "success": "Subscription confirmed!",
+    "emailRequired": "Please enter your email",
+    "emailInvalid": "Invalid email",
+    "error": "An error occurred. Please try again."
+  },
+  "footer": {
+    "streaming": "Streaming",
+    "backToTop": "Back to top",
+    "copyright": "© 2025 Setsugekka Trio. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Photos and videos of the trio",
+    "all": "All",
+    "photos": "Photos",
+    "videos": "Videos"
+  },
+  "pressKit": {
+    "title": "Press Kit",
+    "subtitle": "Download all the assets you need for your articles, interviews and publications.",
+    "downloads": "Downloads",
+    "biography": "Complete Biography",
+    "biographyDesc": "Group history, philosophy and artistic journey",
+    "photos": "HD Press Photos",
+    "photosDesc": "Pack of 10 high-resolution photos for publication",
+    "logos": "Logos & Assets",
+    "logosDesc": "Logo in different formats (SVG, PNG, EPS)",
+    "audio": "Audio Samples",
+    "audioDesc": "Selection of 3 tracks in press quality",
+    "download": "Download",
+    "shortBio": "Short Biography",
+    "pressQuotes": "Press Quotes",
+    "pressContact": "Press Contact",
+    "pressContactDesc": "For any interview or additional information requests"
+  },
+  "album": {
+    "backToDiscography": "Back to discography",
+    "tracklist": "Tracklist",
+    "tracks": "tracks",
+    "otherAlbums": "Other Albums"
+  },
+  "common": {
+    "loading": "Loading...",
+    "back": "Back"
+  }
+}

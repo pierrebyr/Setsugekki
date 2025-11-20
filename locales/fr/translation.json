@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "history": "Histoire",
+    "music": "Musique",
+    "concerts": "Concerts",
+    "gallery": "Galerie",
+    "press": "Presse",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Tokyo Contemporary Trio",
+    "title": "Setsugekka",
+    "quote": "\"Neige, Lune, Fleurs.\"",
+    "description": "La beauté éphémère des choses.",
+    "discover": "Découvrir"
+  },
+  "about": {
+    "sectionTitle": "Formation & Histoire",
+    "title": "Hiver",
+    "year": "2018",
+    "intro": "Le trio s'est formé presque par accident lors d'une nuit de décembre au Blue Note Tokyo. Misaki jouait un set solo, Kenta l'a rejointe, et Reina a emprunté la batterie. Ils ont joué jusqu'à 4h du matin sous la première neige de l'année.",
+    "quote": "« Comme la neige qui tombe, la lune qui change, et les fleurs qui s'ouvrent puis fanent, notre jazz est vivant, impermanent. »",
+    "musicians": "Les Musiciens"
+  },
+  "philosophy": {
+    "title": "三つの道",
+    "subtitle": "Mittsu no Michi",
+    "section": "Philosophie",
+    "integrity": {
+      "title": "Seijitsu",
+      "meaning": "Intégrité",
+      "desc": "Toujours jouer avec honnêteté émotionnelle, jamais pour impressionner."
+    },
+    "space": {
+      "title": "Kūkan",
+      "meaning": "Espace",
+      "desc": "Le silence est aussi important que le son. Le concept de Ma (間)."
+    },
+    "impermanence": {
+      "title": "Mujō",
+      "meaning": "Impermanence",
+      "desc": "Accepter que chaque performance est unique, éphémère et vivante."
+    },
+    "quote": "\"Le silence n'est pas une absence de son, mais une attente.\"",
+    "noPlayback": "Pas de playback",
+    "noOverdubs": "Pas d'overdubs"
+  },
+  "discography": {
+    "title": "Discographie",
+    "subtitle": "Écoute & Sorties",
+    "release": "Sortie",
+    "tracks": "Pistes",
+    "tracklist": "Tracklist",
+    "details": "Détails"
+  },
+  "press": {
+    "sectionTitle": "News & Reviews",
+    "title": "Reconnaissance",
+    "news": "Actualité 2025",
+    "readMore": "Lire l'article"
+  },
+  "tour": {
+    "title": "Tournée",
+    "upcoming": "Prochains Concerts",
+    "book": "Réserver",
+    "soldOut": "Complet",
+    "fewTickets": "Dernières places",
+    "available": "Disponible",
+    "calendar": "Calendrier complet des concerts"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Pour les demandes de booking, presse, ou collaboration.",
+    "management": "Management",
+    "booking": "Booking Europe (2026)",
+    "tba": "TBA / En négociations",
+    "form": {
+      "name": "Nom Complet",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "selectSubject": "Sélectionner un sujet",
+      "booking": "Booking Concert",
+      "pressInterview": "Presse / Interview",
+      "other": "Autre",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Votre message a été envoyé avec succès !"
+    },
+    "errors": {
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Email invalide",
+      "subjectRequired": "Veuillez sélectionner un sujet",
+      "messageRequired": "Le message est requis",
+      "messageMinLength": "Le message doit contenir au moins 10 caractères",
+      "submitError": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Recevez les actualités du trio et dates de concerts.",
+    "placeholder": "votre@email.com",
+    "success": "Inscription confirmée !",
+    "emailRequired": "Veuillez entrer votre email",
+    "emailInvalid": "Email invalide",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "footer": {
+    "streaming": "Streaming",
+    "backToTop": "Retour en haut",
+    "copyright": "© 2025 Setsugekka Trio. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Photos et vidéos du trio",
+    "all": "Tout",
+    "photos": "Photos",
+    "videos": "Vidéos"
+  },
+  "pressKit": {
+    "title": "Press Kit",
+    "subtitle": "Téléchargez tous les assets nécessaires pour vos articles, interviews et publications.",
+    "downloads": "Téléchargements",
+    "biography": "Biographie Complète",
+    "biographyDesc": "Historique du groupe, philosophie et parcours artistique",
+    "photos": "Photos Presse HD",
+    "photosDesc": "Pack de 10 photos haute résolution pour publication",
+    "logos": "Logos & Assets",
+    "logosDesc": "Logo en différents formats (SVG, PNG, EPS)",
+    "audio": "Extraits Audio",
+    "audioDesc": "Sélection de 3 morceaux en qualité presse",
+    "download": "Télécharger",
+    "shortBio": "Biographie Courte",
+    "pressQuotes": "Citations Presse",
+    "pressContact": "Contact Presse",
+    "pressContactDesc": "Pour toute demande d'interview ou d'information complémentaire"
+  },
+  "album": {
+    "backToDiscography": "Retour à la discographie",
+    "tracklist": "Tracklist",
+    "tracks": "pistes",
+    "otherAlbums": "Autres Albums"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "back": "Retour"
+  }
+}

@@ -1,7 +1,7 @@
-import React from 'react';
 import { HISTORY, MEMBERS } from '../constants';
 import { SectionId } from '../types';
 import { motion } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
 
 export const About: React.FC = () => {
   return (
@@ -95,11 +95,10 @@ export const About: React.FC = () => {
                  className="group relative cursor-none"
                >
                  <div className="aspect-[3/4] overflow-hidden mb-6 relative bg-gray-900">
-                   <div className="absolute inset-0 bg-gray-800 animate-pulse z-0" />
-                   <img 
-                     src={member.image} 
-                     alt={member.name} 
-                     className="relative z-10 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out group-hover:scale-105"
+                   <OptimizedImage
+                     src={member.image}
+                     alt={member.name}
+                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out group-hover:scale-105"
                    />
                    
                    {/* Hover Overlay */}

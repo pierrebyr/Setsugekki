@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionId } from '../types';
 import { motion } from 'framer-motion';
 
@@ -26,8 +25,8 @@ export const Philosophy: React.FC = () => {
 
   return (
     <section id={SectionId.PHILOSOPHY} className="relative py-40 bg-paper text-sumi overflow-hidden">
-      {/* Texture Overlay */}
-      <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] pointer-events-none mix-blend-multiply"></div>
+      {/* Subtle paper texture pattern */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.6\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100\' height=\'100\' filter=\'url(%23noise)\' opacity=\'0.4\'/%3E%3C/svg%3E")' }}></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         

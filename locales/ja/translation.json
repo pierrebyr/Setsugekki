@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "history": "歴史",
+    "music": "音楽",
+    "concerts": "コンサート",
+    "gallery": "ギャラリー",
+    "press": "プレス",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "subtitle": "東京コンテンポラリートリオ",
+    "title": "雪月花",
+    "quote": "「雪、月、花。」",
+    "description": "儚い美しさ。",
+    "discover": "探索する"
+  },
+  "about": {
+    "sectionTitle": "結成と歴史",
+    "title": "冬",
+    "year": "2018",
+    "intro": "トリオは12月のある夜、ブルーノート東京で偶然結成されました。美咲がソロセットを演奏していたところ、健太が加わり、玲奈がドラムを借りました。その年の初雪の下、朝4時まで演奏しました。",
+    "quote": "「降る雪のように、変わる月のように、咲いては散る花のように、私たちのジャズは生きていて、無常です。」",
+    "musicians": "ミュージシャン"
+  },
+  "philosophy": {
+    "title": "三つの道",
+    "subtitle": "Mittsu no Michi",
+    "section": "哲学",
+    "integrity": {
+      "title": "誠実",
+      "meaning": "インテグリティ",
+      "desc": "常に感情的な正直さで演奏し、印象づけるためではない。"
+    },
+    "space": {
+      "title": "空間",
+      "meaning": "スペース",
+      "desc": "沈黙は音と同じくらい重要です。間の概念。"
+    },
+    "impermanence": {
+      "title": "無常",
+      "meaning": "無常",
+      "desc": "各パフォーマンスがユニークで儚く生きていることを受け入れる。"
+    },
+    "quote": "「沈黙は音の不在ではなく、期待です。」",
+    "noPlayback": "プレイバックなし",
+    "noOverdubs": "オーバーダブなし"
+  },
+  "discography": {
+    "title": "ディスコグラフィー",
+    "subtitle": "試聴とリリース",
+    "release": "リリース",
+    "tracks": "トラック",
+    "tracklist": "トラックリスト",
+    "details": "詳細"
+  },
+  "press": {
+    "sectionTitle": "ニュースとレビュー",
+    "title": "評価",
+    "news": "2025年ニュース",
+    "readMore": "記事を読む"
+  },
+  "tour": {
+    "title": "ツアー",
+    "upcoming": "今後のコンサート",
+    "book": "予約",
+    "soldOut": "完売",
+    "fewTickets": "残りわずか",
+    "available": "チケット有り",
+    "calendar": "コンサートカレンダー"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ブッキング、プレス、コラボレーションのお問い合わせ。",
+    "management": "マネジメント",
+    "booking": "ヨーロッパブッキング (2026)",
+    "tba": "未定 / 交渉中",
+    "form": {
+      "name": "氏名",
+      "email": "メール",
+      "subject": "件名",
+      "message": "メッセージ",
+      "selectSubject": "件名を選択",
+      "booking": "コンサートブッキング",
+      "pressInterview": "プレス / インタビュー",
+      "other": "その他",
+      "submit": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "メッセージが正常に送信されました！"
+    },
+    "errors": {
+      "nameRequired": "名前は必須です",
+      "emailRequired": "メールは必須です",
+      "emailInvalid": "無効なメール",
+      "subjectRequired": "件名を選択してください",
+      "messageRequired": "メッセージは必須です",
+      "messageMinLength": "メッセージは10文字以上である必要があります",
+      "submitError": "エラーが発生しました。もう一度お試しください。"
+    }
+  },
+  "newsletter": {
+    "title": "ニュースレター",
+    "description": "トリオの最新ニュースとコンサート日程をお届けします。",
+    "placeholder": "your@email.com",
+    "success": "登録が確認されました！",
+    "emailRequired": "メールアドレスを入力してください",
+    "emailInvalid": "無効なメール",
+    "error": "エラーが発生しました。もう一度お試しください。"
+  },
+  "footer": {
+    "streaming": "ストリーミング",
+    "backToTop": "トップに戻る",
+    "copyright": "© 2025 雪月花トリオ. 全著作権所有。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "gallery": {
+    "title": "ギャラリー",
+    "subtitle": "トリオの写真と動画",
+    "all": "すべて",
+    "photos": "写真",
+    "videos": "動画"
+  },
+  "pressKit": {
+    "title": "プレスキット",
+    "subtitle": "記事、インタビュー、出版物に必要なすべてのアセットをダウンロード。",
+    "downloads": "ダウンロード",
+    "biography": "完全な伝記",
+    "biographyDesc": "グループの歴史、哲学、芸術的な旅",
+    "photos": "HDプレス写真",
+    "photosDesc": "出版用の高解像度写真10枚パック",
+    "logos": "ロゴとアセット",
+    "logosDesc": "異なるフォーマットのロゴ (SVG, PNG, EPS)",
+    "audio": "オーディオサンプル",
+    "audioDesc": "プレス品質の3曲セレクション",
+    "download": "ダウンロード",
+    "shortBio": "略歴",
+    "pressQuotes": "プレス引用",
+    "pressContact": "プレス連絡先",
+    "pressContactDesc": "インタビューまたは追加情報のリクエスト"
+  },
+  "album": {
+    "backToDiscography": "ディスコグラフィーに戻る",
+    "tracklist": "トラックリスト",
+    "tracks": "曲",
+    "otherAlbums": "その他のアルバム"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "back": "戻る"
+  }
+}

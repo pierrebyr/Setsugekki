@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { SectionId } from '../types';
+import { OptimizedImage } from './OptimizedImage';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef(null);
@@ -29,9 +30,9 @@ export const Hero: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-black/40 z-10 mix-blend-multiply" />
-        <img 
-          src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2000&auto=format&fit=crop" 
-          alt="Tokyo Night Atmosphere" 
+        <OptimizedImage
+          src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2000&auto=format&fit=crop"
+          alt="Tokyo Night Atmosphere"
           className="w-full h-full object-cover grayscale opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sumi via-transparent to-sumi/50 z-20" />

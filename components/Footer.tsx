@@ -1,6 +1,6 @@
-import React from 'react';
 import { Instagram, Mail, Disc, ArrowUp, Music2 } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
+import { Newsletter } from './Newsletter';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -12,12 +12,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-16 mb-12">
         
         <div className="md:col-span-5">
-           <h3 className="text-4xl font-serif text-white mb-8 tracking-wide">雪月花</h3>
-           <p className="text-sm leading-loose font-light max-w-xs text-gray-500 mb-12">
+           <h3 className="text-4xl font-serif text-white mb-6 tracking-wide">雪月花</h3>
+           <p className="text-sm leading-loose font-light max-w-xs text-gray-500 mb-8">
              Setsugekka Trio.<br/>
              Une exploration du jazz contemporain à travers l'esthétique japonaise de l'impermanence.
            </p>
-           <button 
+           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-xs uppercase tracking-widest hover:text-white transition-colors"
             aria-label="Retourner en haut de la page"
@@ -27,7 +27,11 @@ export const Footer: React.FC = () => {
            </button>
         </div>
 
-        <div className="md:col-span-7 flex flex-col md:flex-row justify-end items-start md:items-center h-full gap-8">
+        <div className="md:col-span-3">
+          <Newsletter />
+        </div>
+
+        <div className="md:col-span-4 flex flex-col md:flex-row justify-end items-start md:items-center h-full gap-8">
           <div className="flex flex-col gap-4 mr-8">
             <h4 className="text-xs uppercase tracking-widest text-gray-600 mb-2">Streaming</h4>
             <a 

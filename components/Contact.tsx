@@ -1,8 +1,9 @@
-import React, { useState, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { SectionId } from '../types';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { fadeInUpVariants, fadeInRightVariants, easeOut } from '../animations';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -67,28 +68,35 @@ export const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Simuler un appel API
-      // Dans un vrai projet, remplacer par :
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
+      // EmailJS configuration - uses environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Simulation d'un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      // TODO: Replace with actual API call
-      // console.log('Formulaire soumis:', formData);
+      if (serviceId && templateId && publicKey) {
+        // Send email via EmailJS
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          publicKey
+        );
+      } else {
+        // Fallback: simulate API call for development
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }
 
       setIsSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
 
-      // Réinitialiser le succès après 5 secondes
+      // Reset success message after 5 seconds
       setTimeout(() => setIsSuccess(false), 5000);
-    } catch (error) {
-      // TODO: Replace with proper error logging service (e.g., Sentry)
-      // console.error('Erreur lors de la soumission:', error);
+    } catch {
       setErrors({ message: 'Une erreur est survenue. Veuillez réessayer.' });
     } finally {
       setIsSubmitting(false);

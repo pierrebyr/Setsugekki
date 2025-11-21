@@ -112,7 +112,7 @@ export const GalleryPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sumi text-yuki pt-32 pb-32">
+    <div className="min-h-screen bg-sumi text-yuki pt-36 pb-32">
       <div className="max-w-7xl mx-auto px-6">
         {/* Back Button */}
         <motion.div

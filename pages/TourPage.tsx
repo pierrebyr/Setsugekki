@@ -52,7 +52,7 @@ export const TourPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sumi text-yuki pt-32 pb-32">
+    <div className="min-h-screen bg-sumi text-yuki pt-36 pb-32">
       <div className="max-w-6xl mx-auto px-6">
         {/* Back Button */}
         <motion.div
@@ -121,7 +121,7 @@ export const TourPage = () => {
             </div>
 
             {/* Calendar Days */}
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-1">
               {/* Empty cells for days before the first day of month */}
               {Array.from({ length: firstDayOfMonth }).map((_, i) => (
                 <div key={`empty-${i}`} className="aspect-square" />
@@ -135,7 +135,7 @@ export const TourPage = () => {
                 return (
                   <div
                     key={day}
-                    className={`aspect-square flex items-center justify-center text-sm relative ${
+                    className={`aspect-square flex items-center justify-center text-sm rounded ${
                       tourDate
                         ? 'bg-vermilion text-white font-bold cursor-pointer hover:bg-vermilion/80 transition-colors'
                         : 'text-gray-400 hover:bg-white/5'
@@ -143,9 +143,6 @@ export const TourPage = () => {
                     title={tourDate ? `${tourDate.venue}, ${tourDate.city}` : undefined}
                   >
                     {day}
-                    {tourDate && (
-                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full" />
-                    )}
                   </div>
                 );
               })}

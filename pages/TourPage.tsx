@@ -52,7 +52,7 @@ export const TourPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sumi text-yuki pt-24 pb-32">
+    <div className="min-h-screen bg-sumi text-yuki pt-32 pb-32">
       <div className="max-w-6xl mx-auto px-6">
         {/* Back Button */}
         <motion.div
@@ -62,11 +62,11 @@ export const TourPage = () => {
           className="mb-12"
         >
           <Link
-            to="/#live"
+            to="/"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm uppercase tracking-widest"
           >
             <ArrowLeft size={16} />
-            Retour aux dates
+            Retour à l'accueil
           </Link>
         </motion.div>
 
